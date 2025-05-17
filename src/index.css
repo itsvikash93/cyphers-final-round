@@ -9,3 +9,9 @@
   font-family: "Aux-mono";
   src: url("./fonts/aux-mono.otf") format("truetype");
 }
+
+::-webkit-scrollbar {
+  width: 0.1px;
+  height: 0.1px;
+  background-color: black;
+}
