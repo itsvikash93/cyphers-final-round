@@ -22,11 +22,11 @@ const ScrollBasedMarquee = ({
 
     const createAnimation = (dir = 1) => {
       animationRef.current?.kill();
-      
+
       // Apply reverse modifier if needed
       const effectiveDir = reverse ? -dir : dir;
       const xChange = effectiveDir > 0 ? "-=100" : "+=100";
-      
+
       animationRef.current = gsap.to(marqueeRef.current, {
         xPercent: xChange,
         duration: speed,
@@ -76,11 +76,11 @@ const ScrollBasedMarquee = ({
             {[...Array(3)].map((_, i) => (
               <h1
                 key={`${block}-${i}`}
-                className="text-xl lg:text-5xl font-[Aux-Mono]"
+                className="text-xl lg:text-2xl leading-none font-[Minecraft]"
               >
-                <span className="font-[Aux-Mono]">TRENDING</span> . {" "}
-                <span className="font-[Aux-Mono]">CONFIDENTIAN</span> . {" "}
-                <span className="font-[Aux-Mono]">CREATIVITY</span> .
+                <span className="inline-block mt-2 mx-3">TRENDING,</span>
+                <span className="inline-block mt-2 mx-3">CONFIDENTIAL,</span>
+                <span className="inline-block mt-2 mx-3">CREATIVITY,</span>
               </h1>
             ))}
           </div>
