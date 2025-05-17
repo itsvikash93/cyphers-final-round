@@ -12,7 +12,7 @@ import Footer from "./components/Footer";
 
 const App = () => {
   return (
-    <div className="w-full bg-[#1C1C1C] text-white select-none">
+    <div className="w-full bg-[#111111] text-white select-none">
       {/* Navbar */}
       <SideNav />
       <RightProgress />

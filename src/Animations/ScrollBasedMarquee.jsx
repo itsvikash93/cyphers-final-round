@@ -79,7 +79,7 @@ const ScrollBasedMarquee = ({
                 className="text-xl lg:text-5xl font-[Aux-Mono]"
               >
                 <span className="font-[Aux-Mono]">TRENDING</span> . {" "}
-                <span className="font-[Aux-Mono]">CONFIDENTIAN</span> . {" "}
+                <span className="font-[Aux-Mono]">CONFIDENTIAL</span> . {" "}
                 <span className="font-[Aux-Mono]">CREATIVITY</span> .
               </h1>
             ))}
