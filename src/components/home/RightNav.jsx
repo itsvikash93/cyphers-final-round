@@ -42,28 +42,28 @@ const RightNav = () => {
     if (isMusicActive) {
       audio.pause();
     } else {
-      audio.volume = 0.5;
+      audio.volume = 1;
       audio.play().catch((err) => console.error("Audio error:", err));
     }
     setIsMusicActive(!isMusicActive);
   };
 
   return (
-    <div className="right-nav fixed z-[99] bottom-10 sm:bottom-15 lg:bottom-0 right-0 h-fit w-fit flex items-center pb-6 pr-6 gap-6">
-      <audio ref={audioRef} src="/Page-1/Music.ogg" loop preload="auto" />
+    <div className="right-nav fixed z-[99] bottom-0 right-0 h-fit w-fit flex items-center pb-6 pr-6 gap-6">
+      <audio ref={audioRef} src="imgs/home/Music.ogg" loop preload="auto" />
 
       <div
         onClick={() => {
-          playSound();
-          toggleAudio();
-        }}
+      
+            playSound();
+         
+    
+          toggleAudio()
+        }
+        }
         className="flex items-center h-10 px-2 scale-[130%] font-[Minecraft] cursor-pointer rounded-md gap-1 text-[#9D2117] hover:opacity-80 transition-opacity"
       >
-        {isMusicActive ? (
-          <h1 className="text-xs mt-1 w-6 mr-1">OFF</h1>
-        ) : (
-          <h1 className="text-xs mt-1 w-6 mr-1">ON</h1>
-        )}
+        { isMusicActive ? <h1 className="text-xs mt-1 w-6 mr-1">OFF</h1> : <h1 className="text-xs mt-1 w-6 mr-1">ON</h1> }
         {Array.from({ length: 8 }).map((_, i) => (
           <div
             key={i}

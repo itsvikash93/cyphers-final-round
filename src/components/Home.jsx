@@ -185,21 +185,57 @@ const Home = () => {
       </div>
 
       {/* Bottom left */}
-      <div className="absolute left-0 bottom-10 lg:bottom-0 p-6 font-[Minecraft]">
-        <h1 className="uppercase text-[2.4vw] lg:text-[1vw] hover:text-[#9D2117] my-1 tracking-wider">
-          LINKEDIN
+      <div className="absolute left-0 bottom-0 p-6 font-[Minecraft]">
+        <h1 className="relative group mb-2 overflow-hidden">
+          <span className="block transition-all duration-300 group-hover:translate-y-[-100%]">
+            LINKEDIN
+          </span>
+          <span className="absolute top-0 left-0 text-[#9D2117] transition-all duration-300 translate-y-full group-hover:translate-y-0">
+            LINKEDIN
+          </span>
+          <div className="h-[2px] w-full bg-[#9D2117] scale-x-0 origin-left transition-transform duration-300 ease-out group-hover:scale-x-100"></div>
         </h1>
-        <h1 className="uppercase text-[2.4vw] lg:text-[1vw] hover:text-[#9D2117] my-1 tracking-wider">
-          INSTAGRAM
+        <h1 className="relative group mb-2 overflow-hidden">
+          <span className="block transition-all duration-300 group-hover:translate-y-[-100%]">
+            INSTAGRAM
+          </span>
+          <span className="absolute top-0 left-0 text-[#9D2117] transition-all duration-300 translate-y-full group-hover:translate-y-0">
+            INSTAGRAM
+          </span>
+          <div className="h-[2px] w-full bg-[#9D2117] scale-x-0 origin-left transition-transform duration-300 ease-out group-hover:scale-x-100"></div>
         </h1>
-        <h1 className="uppercase text-[2.4vw] lg:text-[1vw] hover:text-[#9D2117] my-1 tracking-wider">
-          TWITTER
+       <h1 className="relative group overflow-hidden">
+          <span className="block transition-all duration-300 group-hover:translate-y-[-100%]">
+            TWITTER
+          </span>
+          <span className="absolute top-0 left-0 text-[#9D2117] transition-all duration-300 translate-y-full group-hover:translate-y-0">
+            TWITTER
+          </span>
+          <div className="h-[2px] w-full bg-[#9D2117] scale-x-0 origin-left transition-transform duration-300 ease-out group-hover:scale-x-100"></div>
         </h1>
       </div>
 
-      <div className="absolute right-1/2 translate-x-1/2 lg:translate-x-0 top-1/3 lg:right-0 lg:top-0 p-6">
-        <button className="relative px-8 py-3 border-none text-[#9D2117] font-[Minecraft] uppercase cursor-pointer [clip-path:polygon(0%_0%,95%_0%,100%_20%,100%_100%,5%_100%,0%_80%)] text-base group">
-          Explore
+      <div className="absolute right-0 top-0 p-6">
+        <button className="relative px-8 py-3 border-none text-[#9D2117] font-[Minecraft] uppercase cursor-pointer [clip-path:polygon(0%_0%,95%_0%,100%_20%,100%_100%,5%_100%,0%_80%)] text-base group overflow-hidden">
+          <span className="relative z-10 transition-colors duration-300 group-hover:text-white">
+            Explore
+          </span>
+
+          {/* Animated circle background */}
+          <div className="absolute inset-0 z-0">
+            <span
+              className="absolute h-0 w-0 rounded-full bg-[#9D2117] opacity-0 
+    group-hover:h-[400%] group-hover:w-[400%] group-hover:opacity-100 
+    transition-all duration-500 ease-out"
+              style={{
+                left: "var(--mouse-x)",
+                top: "var(--mouse-y)",
+                transform: "translate(-50%, -50%)",
+              }}
+            ></span>
+          </div>
+
+          {/* Border */}
           <svg
             className="absolute inset-0 w-full h-full pointer-events-none"
             viewBox="0 0 100 100"
@@ -211,8 +247,22 @@ const Home = () => {
               stroke="#9D2117"
               strokeWidth="2"
               vectorEffect="non-scaling-stroke"
+              className="transition-colors duration-300 group-hover:stroke-white"
             />
           </svg>
+
+          {/* Mouse position tracker */}
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+      document.querySelector('button').addEventListener('mousemove', function(e) {
+        const rect = this.getBoundingClientRect();
+        this.style.setProperty('--mouse-x', e.clientX - rect.left + 'px');
+        this.style.setProperty('--mouse-y', e.clientY - rect.top + 'px');
+      });
+    `,
+            }}
+          />
         </button>
       </div>
     </div>

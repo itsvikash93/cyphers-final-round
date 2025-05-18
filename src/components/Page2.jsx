@@ -116,6 +116,7 @@ const Page2 = () => {
       <div className="mt-[15vh] lg:mt-[35vh] w-full" ref={containerRef}>
         <h1 className="lg:text-center px-4 uppercase text-[#9D2117] text-3xl lg:text-5xl tracking-wider mb-4">
           What's <span className="text-white">Exquisite</span> About us
+          
         </h1>
 
         <div className="relative w-full h-fit mt-5 lg:mt-20">
