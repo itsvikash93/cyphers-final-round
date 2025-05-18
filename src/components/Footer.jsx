@@ -1,8 +1,10 @@
 import React from "react";
 import { motion } from "framer-motion";
+import DecryptedText from "../Animations/DecryptedText";
 
 const Footer = () => {
   return (
+    
     <div className="font-[Minecraft] relative lg:min-h-[100vh] w-full">
       {/* Background Image - Hidden on mobile */}
       <img
@@ -61,7 +63,14 @@ const Footer = () => {
 
         {/* Main Heading - Adjusted size for mobile */}
         <h1 className="uppercase px-4 md:px-15 text-[#9D2117] w-full text-[10vw] md:text-[15vw]">
-          Cyphers
+         
+          <DecryptedText
+            text="Cyphers"
+            speed={50}
+            revealDirection="center"
+            maxIterations={100}
+            animateOn="view"
+          />
         </h1>
       </div>
 
