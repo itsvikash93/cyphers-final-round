@@ -45,6 +45,7 @@ const Home = () => {
       },
       {
         y: 0,
+        delay: 5,
         stagger: {
           each: 0.05,
           ease: "linear",
@@ -176,6 +177,16 @@ const Home = () => {
           />
         </div>
 
+        <h2 className="hidden lg:block absolute top-40 left-30 font-[Aux-Mono] text-sm font-light tracking-wider">
+          Project: Final <br />
+          Round Cyphers
+        </h2>
+
+        <h2 className="hidden lg:block absolute bottom-40 right-30 font-[Aux-Mono] text-sm font-light tracking-wider">
+          North: 23.2599° N, <br />
+          East: 77.4126° E
+        </h2>
+
         <h3
           ref={h3Ref}
           className="lg:absolute text-[2.5vw] lg:text-xl font-[Aux-mono] text-center uppercase w-full top-1/2 left-1/2 lg:-translate-x-1/2 lg:mt-15 pointer-events-none"
@@ -204,7 +215,7 @@ const Home = () => {
           </span>
           <div className="h-[2px] w-full bg-[#9D2117] scale-x-0 origin-left transition-transform duration-300 ease-out group-hover:scale-x-100"></div>
         </h1>
-       <h1 className="relative group overflow-hidden">
+        <h1 className="relative group overflow-hidden">
           <span className="block transition-all duration-300 group-hover:translate-y-[-100%]">
             TWITTER
           </span>
