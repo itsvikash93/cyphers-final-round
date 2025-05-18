@@ -1,8 +1,8 @@
 import React from "react";
 import Home from "./components/Home";
-import SideNav from "./components/home/SideNav";
+import Navbar from "./components/home/Navbar";
 import RightNav from "./components/home/RightNav";
-import RightProgress from "./components/home/RightProgress";
+import TopProgress from "./components/home/TopProgress";
 import Page4 from "./components/Page4";
 import Page2 from "./components/Page2";
 import Page3 from "./components/Page3";
@@ -13,8 +13,8 @@ import ClickCursor from "./components/ClickCursor";
 const App = () => {
   return (
     <div className="w-full bg-[#111010] text-white select-none">
-      <SideNav />
-      <RightProgress />
+      <Navbar />
+      <TopProgress />
       <RightNav />
 
       {/* Center Elems */}

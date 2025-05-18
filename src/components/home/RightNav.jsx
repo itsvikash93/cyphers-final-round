@@ -37,31 +37,15 @@ const RightNav = () => {
       audio.pause();
     } else {
       audio.volume = 0.5;
-      audio.play().catch(err => console.error("Audio error:", err));
+      audio.play().catch((err) => console.error("Audio error:", err));
     }
     setIsMusicActive(!isMusicActive);
   };
 
   return (
-    <div className="right-nav fixed z-[99] bottom-0 right-0 h-fit w-fit flex items-center pb-5 pr-15 gap-6">
+    <div className="right-nav fixed z-[99] bottom-0 right-0 h-fit w-fit flex items-center pb-6 pr-6 gap-6">
       <audio ref={audioRef} src="/Page-1/Music.ogg" loop preload="auto" />
-      <button className="relative px-8 py-3 border-none text-[#9D2117] font-[Minecraft] uppercase cursor-pointer [clip-path:polygon(0%_0%,95%_0%,100%_20%,100%_100%,5%_100%,0%_80%)] text-base group">
-        Explore
-        <svg 
-          className="absolute inset-0 w-full h-full pointer-events-none"
-          viewBox="0 0 100 100"
-          preserveAspectRatio="none"
-        >
-          <polygon 
-            points="0,0 95,0 100,20 100,100 5,100 0,80"
-            fill="none"
-            stroke="#9D2117"
-            strokeWidth="3"
-            vectorEffect="non-scaling-stroke"
-          />
-        </svg>
-      </button>
-      
+
       <div
         onClick={toggleAudio}
         className="flex items-center h-10  px-2 scale-[130%] cursor-pointer rounded-md gap-1 text-[#9D2117] hover:opacity-80 transition-opacity"

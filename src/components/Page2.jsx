@@ -102,7 +102,7 @@ const Page2 = () => {
   );
 
   return (
-    <div className="font-[Minecraft] w-full relative bg-[#111010] overflow-hidden">
+    <div className="font-[Minecraft] w-full relative overflow-hidden">
       {/* Animated Marquees */}
       <div className="w-full absolute top-0 left-0 scale-[105%] bg-[#9D2117] rotate-2 py-4 z-10">
         <ScrollBasedMarquee speed={300} />
