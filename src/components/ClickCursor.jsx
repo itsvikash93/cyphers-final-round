@@ -93,7 +93,7 @@ const ClickCursor = () => {
 
       <canvas
         ref={canvasRef}
-        className="fixed top-0 left-0 w-full h-full pointer-events-none z-50"
+        className="fixed top-0 left-0 w-full h-full pointer-events-none z-[999]"
       />
 
       <div

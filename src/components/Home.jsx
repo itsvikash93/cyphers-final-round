@@ -192,6 +192,25 @@ const Home = () => {
           TWITTER
         </h1>
       </div>
+
+      <div className="absolute right-0 top-0 p-6">
+        <button className="relative px-8 py-3 border-none text-[#9D2117] font-[Minecraft] uppercase cursor-pointer [clip-path:polygon(0%_0%,95%_0%,100%_20%,100%_100%,5%_100%,0%_80%)] text-base group">
+          Explore
+          <svg
+            className="absolute inset-0 w-full h-full pointer-events-none"
+            viewBox="0 0 100 100"
+            preserveAspectRatio="none"
+          >
+            <polygon
+              points="0,0 95,0 100,20 100,100 5,100 0,80"
+              fill="none"
+              stroke="#9D2117"
+              strokeWidth="2"
+              vectorEffect="non-scaling-stroke"
+            />
+          </svg>
+        </button>
+      </div>
     </div>
   );
 };
