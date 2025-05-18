@@ -35,9 +35,14 @@ const Page3 = () => {
 
       if (isCenter || isLeft || isRight) {
         // Responsive spacing - smaller on mobile
-        const xPosition = window.innerWidth < 768 
-          ? (position === data.length - 1 ? -150 : position * 150)
-          : (position === data.length - 1 ? -350 : position * 350);
+        const xPosition =
+          window.innerWidth < 768
+            ? position === data.length - 1
+              ? -150
+              : position * 150
+            : position === data.length - 1
+            ? -350
+            : position * 350;
 
         // Get the SVG elements
         const mainSvg = item.querySelector(".main-svg polygon");
@@ -98,8 +103,8 @@ const Page3 = () => {
   }, [currentIndex]);
 
   return (
-    <div className="py-[10vh] md:py-[20vh] font-[Minecraft] min-h-[100vh] w-full overflow-hidden relative">
-      <h1 className="text-center uppercase text-[#9D2117] text-3xl md:text-6xl px-4">
+    <div className="py-[2vh] md:py-[5vh] font-[Minecraft] lg:min-h-[100vh] w-full overflow-hidden relative">
+      <h1 className="lg:text-center uppercase text-[#9D2117] text-3xl md:text-5xl px-4">
         what's in the <span className="text-white">menu</span> for you
       </h1>
 
@@ -136,25 +141,31 @@ const Page3 = () => {
               <div
                 key={index}
                 ref={(el) => (itemsRef.current[index] = el)}
-                className={`absolute h-[40vh] md:h-[55vh] w-[70%] md:w-[25%] transition-all duration-300`}
+                className={`absolute h-[40vh] md:h-[55vh] w-[70%] lg:w-[25%] transition-all duration-300`}
                 style={{
                   display: isVisible ? "block" : "none",
-                  pointerEvents: isCenter ? "auto" : "none"
+                  pointerEvents: isCenter ? "auto" : "none",
                 }}
               >
                 {/* Shadow image with conditional opacity */}
                 <img
-                  className={`w-full h-full scale-[130%] ${isCenter ? "opacity-100" : "opacity-0"} transition-opacity duration-300`}
+                  className={`w-full h-full scale-[130%] ${
+                    isCenter ? "opacity-100" : "opacity-0"
+                  } transition-opacity duration-300`}
                   src="/imgs/page3/Rectangle 29.png"
                   alt=""
                 />
                 <img
-                  className={`absolute w-[120%] scale-[110%] -left-10 md:-left-20 -top-10 md:-top-20 transition-opacity duration-300 ${isCenter ? "opacity-100" : "opacity-0"}`}
+                  className={`absolute w-[120%] scale-[110%] -left-10 md:-left-20 -top-10 md:-top-20 transition-opacity duration-300 ${
+                    isCenter ? "opacity-100" : "opacity-0"
+                  }`}
                   src="/imgs/page3/image.png"
                   alt=""
                 />
                 <img
-                  className={`absolute w-[90%] scale-[130%] -left-8 md:-left-15 -top-2 md:-top-4 transition-opacity duration-300 ${isCenter ? "opacity-0" : "opacity-100"}`}
+                  className={`absolute w-[90%] scale-[130%] -left-8 md:-left-15 -top-2 md:-top-4 transition-opacity duration-300 ${
+                    isCenter ? "opacity-0" : "opacity-100"
+                  }`}
                   src="/imgs/page3/ChatGPT_Image_May_18__2025__05_23_06_AM-removebg-preview.png"
                   alt=""
                 />

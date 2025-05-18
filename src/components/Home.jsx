@@ -17,78 +17,73 @@ const Home = () => {
   const shadowRef = useRef(null);
   const parent = useRef(null);
 
-  useGSAP(
-    () => {
-      const middle = Math.floor(text.length / 2);
+  useGSAP(() => {
+    const middle = Math.floor(text.length / 2);
 
-      // For initial animation (center to out)
-      const orderedLettersIn = lettersRef.current
-        .map((letter, i) => ({
-          element: letter,
-          distance: Math.abs(i - middle),
-        }))
-        .sort((a, b) => a.distance - b.distance);
+    // For initial animation (center to out)
+    const orderedLettersIn = lettersRef.current
+      .map((letter, i) => ({
+        element: letter,
+        distance: Math.abs(i - middle),
+      }))
+      .sort((a, b) => a.distance - b.distance);
 
-      // For exit animation (out to center)
-      const orderedLettersOut = lettersRef.current
-        .map((letter, i) => ({
-          element: letter,
-          distance: Math.abs(i - middle),
-        }))
-        .sort((a, b) => b.distance - a.distance);
+    // For exit animation (out to center)
+    const orderedLettersOut = lettersRef.current
+      .map((letter, i) => ({
+        element: letter,
+        distance: Math.abs(i - middle),
+      }))
+      .sort((a, b) => b.distance - a.distance);
 
-      // Initial animation
-      const entryAnim = gsap.timeline();
-      entryAnim.fromTo(
-        orderedLettersIn.map((l) => l.element),
-        {
-          y: -1000,
+    // Initial animation
+    const entryAnim = gsap.timeline();
+    entryAnim.fromTo(
+      orderedLettersIn.map((l) => l.element),
+      {
+        y: -1000,
+      },
+      {
+        y: 0,
+        stagger: {
+          each: 0.05,
+          ease: "linear",
         },
-        {
-          y: 0,
-          stagger: {
-            each: 0.05,
-            ease: "linear",
-          },
-        }
-      );
+      }
+    );
 
-      // Exit animation on scroll with improved reversing
-      ScrollTrigger.create({
-        trigger: containerRef.current,
-        start: "top 0%",
-        end: "bottom 100%",
-        scrub: 1,
-        // markers: true,
-        onUpdate: (self) => {
-          const progress = self.progress;
+    // Exit animation on scroll with improved reversing
+    ScrollTrigger.create({
+      trigger: containerRef.current,
+      start: "top 0%",
+      end: "bottom 100%",
+      scrub: 1,
+      // markers: true,
+      onUpdate: (self) => {
+        const progress = self.progress;
 
-          // Custom group-wise stagger order
-          const customOrder = [
-            [0, 6], // O, Y
-            [1, 5], // V, A
-            [2, 4], // E, L
-            [3],    // R
-          ];
+        // Custom group-wise stagger order
+        const customOrder = [
+          [0, 6], // O, Y
+          [1, 5], // V, A
+          [2, 4], // E, L
+          [3], // R
+        ];
 
-          customOrder.forEach((group, groupIndex) => {
-            group.forEach((i) => {
-              const element = lettersRef.current[i];
-              gsap.to(element, {
-                y: -progress * 2000,
-                duration: 0.2,
-                ease: "easeIn",
-                delay: groupIndex * 0.05,
-              });
+        customOrder.forEach((group, groupIndex) => {
+          group.forEach((i) => {
+            const element = lettersRef.current[i];
+            gsap.to(element, {
+              y: -progress * 2000,
+              duration: 0.2,
+              ease: "easeIn",
+              delay: groupIndex * 0.05,
             });
           });
-        },
-      });
-
-
-    },
-
-  );
+        });
+      },
+    });
+  });
 
   useEffect(() => {
     const moveElements = (e) => {
@@ -138,62 +133,71 @@ const Home = () => {
   return (
     <div ref={parent} className="h-screen w-full">
       {/* Center Elems */}
-      <div className="relative h-full w-full flex flex-col items-center justify-center ">
-        <div ref={h1Ref} className="relative w-fit h-fit">
+      <div className="relative h-full w-full flex flex-col items-center lg:justify-center ">
+        <div ref={h1Ref} className="mt-[20vh] lg:mt-0 relative w-fit h-fit">
           <h1 className="text-[14vw] leading-[13vw] uppercase text-[#9D2117] font-[Minecraft] tracking-[1.5vw]">
-           {text.split("").map((letter, index) => (
-            <span
-              key={index}
-              ref={(el) => (lettersRef.current[index] = el)}
-              className="inline-block "
-            >
-              {letter}
-            </span>
-          ))}
+            {text.split("").map((letter, index) => (
+              <span
+                key={index}
+                ref={(el) => (lettersRef.current[index] = el)}
+                className="inline-block "
+              >
+                {letter}
+              </span>
+            ))}
           </h1>
           <motion.img
             src="./imgs/home/star.png"
             alt=""
-            className="absolute right-5 top-0 -translate-y-1/2 translate-x-1/2"
+            className="absolute right-0 lg:right-5 h-10 lg:h-auto top-0 -translate-y-1/2 translate-x-1/2"
             animate={{ rotate: -360 }}
             transition={{ repeat: Infinity, duration: 4, ease: "linear" }}
             style={{ originX: 0.5, originY: 0.5 }}
           />
         </div>
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[70%] h-[100%] overflow-y-hidden flex items-end justify-center">
-          <div ref={centerImg} className="h-[90%] w-full">
+
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full lg:w-[70%] h-[100%] overflow-y-hidden flex items-end justify-center">
+          <div
+            ref={centerImg}
+            className="h-full lg:h-[90%] w-full hidden lg:block"
+          >
             <ImgEffectContainer img={"./imgs/home/model.png"} />
           </div>
+          <img
+            src="./imgs/home/model.png"
+            alt=""
+            className="w-[95%] sm:w-[70%] h-fit object-cover lg:hidden"
+          />
           <img
             ref={shadowRef}
             src="./imgs/home/shadow.png"
             alt=""
-            className="absolute bottom-0 top-1/2 -translate-y-1/2 w-[100vw] h-[130vh] z-[-2]"
+            className="absolute bottom-0 top-1/2 -translate-y-1/2 lg:w-[100vw] w-[140vw]  lg:h-[130vh] z-[-2]"
           />
         </div>
 
         <h3
           ref={h3Ref}
-          className="absolute text-xl font-[Aux-mono] text-center uppercase w-full top-1/2 left-1/2 -translate-x-1/2 mt-15 pointer-events-none"
+          className="lg:absolute text-[2.5vw] lg:text-xl font-[Aux-mono] text-center uppercase w-full top-1/2 left-1/2 lg:-translate-x-1/2 lg:mt-15 pointer-events-none"
         >
           Creative Web. Motion Magic. Pixel Precision.
         </h3>
       </div>
 
       {/* Bottom left */}
-      <div className="absolute left-0 bottom-0 p-6 font-[Minecraft]">
-        <h1 className="uppercase text-[1vw] hover:text-[#9D2117] my-1 tracking-wider">
+      <div className="absolute left-0 bottom-10 lg:bottom-0 p-6 font-[Minecraft]">
+        <h1 className="uppercase text-[2.4vw] lg:text-[1vw] hover:text-[#9D2117] my-1 tracking-wider">
           LINKEDIN
         </h1>
-        <h1 className="uppercase text-[1vw] hover:text-[#9D2117] my-1 tracking-wider">
+        <h1 className="uppercase text-[2.4vw] lg:text-[1vw] hover:text-[#9D2117] my-1 tracking-wider">
           INSTAGRAM
         </h1>
-        <h1 className="uppercase text-[1vw] hover:text-[#9D2117] my-1 tracking-wider">
+        <h1 className="uppercase text-[2.4vw] lg:text-[1vw] hover:text-[#9D2117] my-1 tracking-wider">
           TWITTER
         </h1>
       </div>
 
-      <div className="absolute right-0 top-0 p-6">
+      <div className="absolute right-1/2 translate-x-1/2 lg:translate-x-0 top-1/3 lg:right-0 lg:top-0 p-6">
         <button className="relative px-8 py-3 border-none text-[#9D2117] font-[Minecraft] uppercase cursor-pointer [clip-path:polygon(0%_0%,95%_0%,100%_20%,100%_100%,5%_100%,0%_80%)] text-base group">
           Explore
           <svg

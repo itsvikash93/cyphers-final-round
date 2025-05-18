@@ -1,18 +1,18 @@
 export const content = [
   {
-    title: "Richard Gaston",
+    title: "Home",
     src: "/imgs/home/img1.png",
   },
   {
-    title: "KangHee Kim",
+    title: "Our Works",
     src: "/imgs/home/img2.jpg",
   },
   {
-    title: "Inka and Niclas",
+    title: "Services",
     src: "/imgs/home/img3.jpg",
   },
   {
-    title: "Arch McLeish",
+    title: "Contact Us",
     src: "/imgs/home/img4.png",
   },
 ];

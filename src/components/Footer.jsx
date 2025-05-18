@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 const Footer = () => {
   return (
-    <div className="font-[Minecraft] relative min-h-[100vh] w-full">
+    <div className="font-[Minecraft] relative lg:min-h-[100vh] w-full">
       {/* Background Image - Hidden on mobile */}
       <img
         className="absolute top-0 left-0 w-full h-full object-cover md:block hidden"
@@ -11,7 +11,7 @@ const Footer = () => {
         alt=""
       />
 
-      <div className="border-b-[1px] relative flex items-end border-zinc-600 h-[90vh] w-full">
+      <div className="border-b-[1px] relative flex items-end border-zinc-600 h-[50vh] lg:h-[90vh] w-full">
         {/* Main Content */}
         <img
           className="absolute bottom-0 left-1/2 translate-x-[-50%] w-[80%] md:w-[30%]"
@@ -23,7 +23,7 @@ const Footer = () => {
           src="/imgs/Footer/Ellipse 91.png"
           alt=""
         />
-        
+
         {/* Rotating Star - Hidden on mobile */}
         <motion.img
           animate={{ rotate: -360 }}
@@ -33,7 +33,7 @@ const Footer = () => {
           src="/imgs/home/star.png"
           alt=""
         />
-        
+
         {/* Group Image - Hidden on mobile */}
         <img
           className="top-[20%] left-[15%] absolute md:block hidden"
@@ -42,7 +42,7 @@ const Footer = () => {
         />
 
         {/* Tagline - Adjusted for mobile */}
-        <h1 className="uppercase text-lg md:text-3xl px-4 md:px-15 font-[Aux-mono] absolute w-full bottom-5 left-0 text-center">
+        <h1 className="uppercase text-lg hidden lg:block md:text-3xl px-4 md:px-15 font-[Aux-mono] absolute w-full bottom-5 left-0 text-center">
           Creative Web. Motion Magic. Pixel Precision.
         </h1>
 
@@ -66,7 +66,7 @@ const Footer = () => {
       </div>
 
       {/* Bottom Bar */}
-      <div className="w-full h-[10vh] flex items-center justify-center">
+      <div className="w-full py-2 lg:h-[10vh] flex items-center justify-center">
         <div className="w-[25%] border-r-[1px] border-zinc-600 h-full"></div>
         <div className="w-[50%] flex items-center uppercase justify-center font-[Aux-mono] h-full text-sm md:text-base">
           created by Cyphers
