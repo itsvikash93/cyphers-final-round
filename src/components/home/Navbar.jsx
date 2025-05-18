@@ -32,6 +32,10 @@ const Navbar = () => {
         )}
       </div>
 
+      <div className="absolute w-full h-[40%] top-15  left-0 flex items-center justify-center">
+        <img className="w-[4%]" src="/imgs/home/Group 40.svg" alt="" />
+      </div>
+
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -43,7 +47,7 @@ const Navbar = () => {
           >
             <Scene activeMenu={activeMenu} />
 
-            <div className="left relative h-full w-full text-7xl font-bold uppercase flex flex-col gap-2 items-center justify-center text-white font-[Minecraft] tracking-wider pointer-events-auto">
+            <div className="left relative h-full w-full text-2xl lg:text-7xl font-bold uppercase flex flex-col gap-2 items-center justify-center text-white font-[Minecraft] tracking-wider pointer-events-auto">
               <div
                 onMouseLeave={() => setActiveMenu(null)}
                 className="w-[80%] relative"
@@ -60,7 +64,7 @@ const Navbar = () => {
                   </h1>
                 ))}
 
-                <div className="absolute h-10 -bottom-15 right-0 font-normal text-base normal-case ">
+                <div className="absolute -bottom-22 right-0 font-normal text-base normal-case ">
                   <div className="flex justify-center items-center gap-6">
                     <a href="#">
                       <i className="ri-linkedin-box-fill text-2xl"></i>

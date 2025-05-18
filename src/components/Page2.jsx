@@ -16,6 +16,8 @@ const Page2 = () => {
 
   useGSAP(
     () => {
+      // Only run animations on desktop
+      if (window.innerWidth < 1024) return;
       // Progress line animation
       gsap.to(progressRef.current, {
         height: "100%",
@@ -111,12 +113,12 @@ const Page2 = () => {
         <ScrollBasedMarquee speed={300} reverse={true} />
       </div>
 
-      <div className="mt-[35vh] w-full" ref={containerRef}>
-        <h1 className="text-center uppercase text-[#9D2117] text-5xl tracking-wider mb-4">
+      <div className="mt-[15vh] lg:mt-[35vh] w-full" ref={containerRef}>
+        <h1 className="lg:text-center px-4 uppercase text-[#9D2117] text-3xl lg:text-5xl tracking-wider mb-4">
           What's <span className="text-white">Exquisite</span> About us
         </h1>
 
-        <div className="relative w-full h-fit mt-20">
+        <div className="relative w-full h-fit mt-5 lg:mt-20">
           {/* Timeline */}
           <div
             className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[70%] w-[0.08vw] bg-[#534F4F] backdrop-blur-sm"
@@ -130,7 +132,7 @@ const Page2 = () => {
               <div
                 key={i}
                 ref={(el) => (circlesRef.current[i] = el)}
-                className={`h-14 w-14 rounded-full border-2 absolute flex items-center justify-center  -translate-x-1/2
+                className={`w-6 h-6 lg:h-14 lg:w-14 rounded-full border-2 absolute flex items-center justify-center -translate-x-1/2
                   ${
                     i === 0
                       ? "top-0 -translate-y-1/2 border-[#9D2117]"
@@ -140,8 +142,10 @@ const Page2 = () => {
                   }`}
               >
                 <span
-                  className={`h-3 w-3 inline-block rounded-full 
-                  ${i === 0 ? "bg-[#9D2117]" : "bg-[#534F4F]"} circle-dot-gray`}
+                  className={`h-1 w-1 lg:h-3 lg:w-3 inline-block rounded-full 
+                  ${
+                    i === 0 ? "bg-[#9D2117]" : "bg-[#534F4F]"
+                  } circle-dot-gray `}
                 />
               </div>
             ))}
@@ -151,13 +155,13 @@ const Page2 = () => {
           <div className="">
             <div
               ref={(el) => (contentRefs.current[0] = el)}
-              className="w-full h-[50vh] flex items-center justify-between mb-20"
+              className="w-full h-[18vh] lg:h-[50vh] flex items-center justify-between mb-10 lg:mb-20"
             >
-              <div className="w-[45%] h-fit pl-20">
-                <h1 className="text-[#9D2117] uppercase font-[Minecraft] text-2xl tracking-wider">
+              <div className="w-[45%] h-fit pl-4 lg:pl-20">
+                <h1 className="text-[#9D2117] uppercase font-[Minecraft] text-sm lg:text-2xl tracking-wider">
                   Where Creativity Codes the Future
                 </h1>
-                <h3 className="font-[Aux-mono] text-sm text-white mt-4 uppercase">
+                <h3 className="font-[Aux-mono] text-xs lg:text-sm text-white mt-4 uppercase">
                   We don’t just follow trends — we craft tomorrow’s digital
                   stories with code, motion, and imagination.
                 </h3>
@@ -165,8 +169,8 @@ const Page2 = () => {
               <div className="w-[40%] h-full flex items-center justify-center rounded-l-lg bg-[#9D2117] group shadow-2xl">
                 <div className="w-full h-full rounded-l-lg group-hover:translate-x-4 group-hover:-translate-y-4 transition-all duration-400 shadow-2xl overflow-hidden">
                   <DistortionImageEffect
-                    img1="./imgs/page2/img1.png"
-                    img2="./imgs/page2/img1.png"
+                    img1="./imgs/page2/img11.png"
+                    img2="./imgs/page2/img12.png"
                     disp="/imgs/displacement/image.png"
                   />
                 </div>
@@ -175,46 +179,46 @@ const Page2 = () => {
 
             <div
               ref={(el) => (contentRefs.current[1] = el)}
-              className="w-full h-[50vh] flex items-center justify-between mb-20"
+              className="w-full h-[18vh] lg:h-[50vh] flex items-center justify-between mb-10 lg:mb-20"
             >
               <div className="w-[40%] h-full flex items-center justify-center rounded-r-lg bg-[#9D2117] group shadow-2xl">
                 <div className="w-full h-full rounded-r-lg group-hover:-translate-x-4 group-hover:-translate-y-4 transition-all duration-400 shadow-2xl overflow-hidden">
                   <DistortionImageEffect
-                    img1="./imgs/page2/img1.png"
-                    img2="./imgs/page2/img1.png"
+                    img1="./imgs/page2/img21.png"
+                    img2="./imgs/page2/img22.jpg"
                     disp="/imgs/displacement/image.png"
                   />
                 </div>
               </div>
-              <div className="w-[45%] h-fit pr-20">
-                <h1 className="text-[#9D2117] uppercase font-[Minecraft] text-2xl tracking-wider">
-                  Where Creativity Codes the Future
+              <div className="w-[45%] h-fit pr-4 lg:pr-20">
+                <h1 className="text-[#9D2117] uppercase font-[Minecraft] text-sm lg:text-2xl tracking-wider">
+                  Creative Minds. Clean Code. Compelling Motion.
                 </h1>
-                <h3 className="font-[Aux-mono] text-sm text-white mt-4 uppercase">
-                  We don’t just follow trends — we craft tomorrow’s digital
-                  stories with code, motion, and imagination.
+                <h3 className="font-[Aux-mono] text-xs lg:text-sm text-white mt-4 uppercase">
+                  Our secret formula: innovation-driven design + smooth
+                  animations + optimized performance.
                 </h3>
               </div>
             </div>
 
             <div
               ref={(el) => (contentRefs.current[2] = el)}
-              className="w-full h-[50vh] flex items-center justify-between mb-20"
+              className="w-full h-[18vh] lg:h-[50vh] flex items-center justify-between mb-10 lg:mb-20"
             >
-              <div className="w-[45%] h-fit pl-20">
-                <h1 className="text-[#9D2117] uppercase font-[Minecraft] text-2xl tracking-wider">
-                  Where Creativity Codes the Future
+              <div className="w-[45%] h-fit pl-4 lg:pl-20">
+                <h1 className="text-[#9D2117] uppercase font-[Minecraft] text-sm lg:text-2xl tracking-wider">
+                  Exquisite in Motion
                 </h1>
-                <h3 className="font-[Aux-mono] text-sm text-white mt-4 uppercase">
-                  We don’t just follow trends — we craft tomorrow’s digital
-                  stories with code, motion, and imagination.
+                <h3 className="font-[Aux-mono] text-xs lg:text-sm text-white mt-4 uppercase">
+                  We blend storytelling, 3D visuals, microinteractions, and
+                  responsive design into one seamless web performance.
                 </h3>
               </div>
               <div className="w-[40%] h-full flex items-center justify-center rounded-l-lg bg-[#9D2117] group shadow-2xl">
                 <div className="w-full h-full rounded-l-lg group-hover:translate-x-4 group-hover:-translate-y-4 transition-all duration-400 shadow-2xl overflow-hidden">
                   <DistortionImageEffect
-                    img1="./imgs/page2/img1.png"
-                    img2="./imgs/page2/img1.png"
+                    img1="./imgs/page2/img31.png"
+                    img2="./imgs/page2/img32.png"
                     disp="/imgs/displacement/image.png"
                   />
                 </div>

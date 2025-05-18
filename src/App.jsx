@@ -7,27 +7,32 @@ import Page4 from "./components/Page4";
 import Page2 from "./components/Page2";
 import Page3 from "./components/Page3";
 import Loader from "./components/Loader";
+import ReactLenis, { useLenis } from "lenis/react";
 
 import Footer from "./components/Footer";
 import ClickCursor from "./components/ClickCursor";
 
 const App = () => {
+  const lenis = useLenis();
+
   return (
-    <div className="w-full bg-[#111010] text-white select-none">
-      <Loader />
-      <Navbar />
-      <TopProgress />
-      <RightNav />
+    <ReactLenis root>
+      <div className="w-full bg-[#111010] text-white select-none">
+        <Loader/>
+        <Navbar />
+        <TopProgress />
+        <RightNav />
 
-      {/* Center Elems */}
-      <ClickCursor />
-      <Home />
-      <Page2 />
-      <Page3 />
-      <Page4 />
+        {/* Center Elems */}
+        <ClickCursor />
+        <Home />
+        <Page2 />
+        <Page3 />
+        <Page4 />
 
-      <Footer />
-    </div>
+        <Footer />
+      </div>
+    </ReactLenis>
   );
 };
 

@@ -71,20 +71,22 @@ const ScrollBasedMarquee = ({
   return (
     <div className={`overflow-hidden w-full whitespace-nowrap ${className}`}>
       <div className="flex gap-8 w-fit" ref={marqueeRef}>
-        {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ,11 ,12 , 13 , 14, 15,16].map((block) => (
-          <div className="flex gap-8" key={block}>
-            {[...Array(3)].map((_, i) => (
-              <h1
-                key={`${block}-${i}`}
-                className="text-xl lg:text-2xl leading-none font-[Minecraft]"
-              >
-                <span className="inline-block mt-2 mx-3">TRENDING,</span>
-                <span className="inline-block mt-2 mx-3">CONFIDENTIAL,</span>
-                <span className="inline-block mt-2 mx-3">CREATIVITY,</span>
-              </h1>
-            ))}
-          </div>
-        ))}
+        {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16].map(
+          (block) => (
+            <div className="flex gap-8" key={block}>
+              {[...Array(3)].map((_, i) => (
+                <h1
+                  key={`${block}-${i}`}
+                  className="text-xl lg:text-2xl leading-none font-[Minecraft]"
+                >
+                  <span className="inline-block mt-2 mx-3">TRENDING,</span>
+                  <span className="inline-block mt-2 mx-3">CONFIDENTIAL,</span>
+                  <span className="inline-block mt-2 mx-3">CREATIVITY,</span>
+                </h1>
+              ))}
+            </div>
+          )
+        )}
       </div>
     </div>
   );
