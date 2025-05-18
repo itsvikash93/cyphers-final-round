@@ -37,7 +37,7 @@ const Page3 = () => {
         // Responsive spacing - smaller on mobile
         const xPosition = window.innerWidth < 768 
           ? (position === data.length - 1 ? -150 : position * 150)
-          : (position === data.length - 1 ? -350 : position * 350);
+          : (position === data.length - 1 ? -400 : position * 400);
 
         // Get the SVG elements
         const mainSvg = item.querySelector(".main-svg polygon");
