@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "remixicon/fonts/remixicon.css";
+@import "lenis/dist/lenis.css";
 
 @font-face {
   font-family: "Minecraft";

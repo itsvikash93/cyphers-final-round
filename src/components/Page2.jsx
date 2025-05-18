@@ -116,7 +116,6 @@ const Page2 = () => {
       <div className="mt-[15vh] lg:mt-[35vh] w-full" ref={containerRef}>
         <h1 className="lg:text-center px-4 uppercase text-[#9D2117] text-3xl lg:text-5xl tracking-wider mb-4">
           What's <span className="text-white">Exquisite</span> About us
-          
         </h1>
 
         <div className="relative w-full h-fit mt-5 lg:mt-20">
@@ -144,7 +143,9 @@ const Page2 = () => {
               >
                 <span
                   className={`h-1 w-1 lg:h-3 lg:w-3 inline-block rounded-full 
-                  ${i === 0 ? "bg-[#9D2117]" : "bg-[#534F4F]"} circle-dot-gray `}
+                  ${
+                    i === 0 ? "bg-[#9D2117]" : "bg-[#534F4F]"
+                  } circle-dot-gray `}
                 />
               </div>
             ))}
@@ -168,8 +169,8 @@ const Page2 = () => {
               <div className="w-[40%] h-full flex items-center justify-center rounded-l-lg bg-[#9D2117] group shadow-2xl">
                 <div className="w-full h-full rounded-l-lg group-hover:translate-x-4 group-hover:-translate-y-4 transition-all duration-400 shadow-2xl overflow-hidden">
                   <DistortionImageEffect
-                    img1="./imgs/page2/img1.png"
-                    img2="./imgs/page2/img1.png"
+                    img1="./imgs/page2/img11.png"
+                    img2="./imgs/page2/img12.png"
                     disp="/imgs/displacement/image.png"
                   />
                 </div>
@@ -183,19 +184,19 @@ const Page2 = () => {
               <div className="w-[40%] h-full flex items-center justify-center rounded-r-lg bg-[#9D2117] group shadow-2xl">
                 <div className="w-full h-full rounded-r-lg group-hover:-translate-x-4 group-hover:-translate-y-4 transition-all duration-400 shadow-2xl overflow-hidden">
                   <DistortionImageEffect
-                    img1="./imgs/page2/img1.png"
-                    img2="./imgs/page2/img1.png"
+                    img1="./imgs/page2/img21.png"
+                    img2="./imgs/page2/img22.jpg"
                     disp="/imgs/displacement/image.png"
                   />
                 </div>
               </div>
               <div className="w-[45%] h-fit pr-4 lg:pr-20">
                 <h1 className="text-[#9D2117] uppercase font-[Minecraft] text-sm lg:text-2xl tracking-wider">
-                  Where Creativity Codes the Future
+                  Creative Minds. Clean Code. Compelling Motion.
                 </h1>
                 <h3 className="font-[Aux-mono] text-xs lg:text-sm text-white mt-4 uppercase">
-                  We don’t just follow trends — we craft tomorrow’s digital
-                  stories with code, motion, and imagination.
+                  Our secret formula: innovation-driven design + smooth
+                  animations + optimized performance.
                 </h3>
               </div>
             </div>
@@ -206,18 +207,18 @@ const Page2 = () => {
             >
               <div className="w-[45%] h-fit pl-4 lg:pl-20">
                 <h1 className="text-[#9D2117] uppercase font-[Minecraft] text-sm lg:text-2xl tracking-wider">
-                  Where Creativity Codes the Future
+                  Exquisite in Motion
                 </h1>
                 <h3 className="font-[Aux-mono] text-xs lg:text-sm text-white mt-4 uppercase">
-                  We don’t just follow trends — we craft tomorrow’s digital
-                  stories with code, motion, and imagination.
+                  We blend storytelling, 3D visuals, microinteractions, and
+                  responsive design into one seamless web performance.
                 </h3>
               </div>
               <div className="w-[40%] h-full flex items-center justify-center rounded-l-lg bg-[#9D2117] group shadow-2xl">
                 <div className="w-full h-full rounded-l-lg group-hover:translate-x-4 group-hover:-translate-y-4 transition-all duration-400 shadow-2xl overflow-hidden">
                   <DistortionImageEffect
-                    img1="./imgs/page2/img1.png"
-                    img2="./imgs/page2/img1.png"
+                    img1="./imgs/page2/img31.png"
+                    img2="./imgs/page2/img32.png"
                     disp="/imgs/displacement/image.png"
                   />
                 </div>
