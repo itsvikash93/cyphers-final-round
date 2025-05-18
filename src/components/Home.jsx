@@ -3,12 +3,92 @@ import { motion } from "motion/react";
 import ImgEffectContainer from "../effects/ImgEffectContainer";
 import gsap from "gsap";
 
+import { useGSAP } from "@gsap/react";
+
+import ScrollTrigger from "gsap/ScrollTrigger";
+
 const Home = () => {
   const h1Ref = useRef(null);
   const h3Ref = useRef(null);
+  const text = "CYPHERS";
+  const containerRef = useRef(null);
+  const lettersRef = useRef([]);
   const centerImg = useRef(null);
   const shadowRef = useRef(null);
   const parent = useRef(null);
+
+  useGSAP(
+    () => {
+      const middle = Math.floor(text.length / 2);
+
+      // For initial animation (center to out)
+      const orderedLettersIn = lettersRef.current
+        .map((letter, i) => ({
+          element: letter,
+          distance: Math.abs(i - middle),
+        }))
+        .sort((a, b) => a.distance - b.distance);
+
+      // For exit animation (out to center)
+      const orderedLettersOut = lettersRef.current
+        .map((letter, i) => ({
+          element: letter,
+          distance: Math.abs(i - middle),
+        }))
+        .sort((a, b) => b.distance - a.distance);
+
+      // Initial animation
+      const entryAnim = gsap.timeline();
+      entryAnim.fromTo(
+        orderedLettersIn.map((l) => l.element),
+        {
+          y: -1000,
+        },
+        {
+          y: 0,
+          stagger: {
+            each: 0.05,
+            ease: "linear",
+          },
+        }
+      );
+
+      // Exit animation on scroll with improved reversing
+      ScrollTrigger.create({
+        trigger: containerRef.current,
+        start: "top 0%",
+        end: "bottom 100%",
+        scrub: 1,
+        // markers: true,
+        onUpdate: (self) => {
+          const progress = self.progress;
+
+          // Custom group-wise stagger order
+          const customOrder = [
+            [0, 6], // O, Y
+            [1, 5], // V, A
+            [2, 4], // E, L
+            [3],    // R
+          ];
+
+          customOrder.forEach((group, groupIndex) => {
+            group.forEach((i) => {
+              const element = lettersRef.current[i];
+              gsap.to(element, {
+                y: -progress * 2000,
+                duration: 0.2,
+                ease: "easeIn",
+                delay: groupIndex * 0.05,
+              });
+            });
+          });
+        },
+      });
+
+
+    },
+
+  );
 
   useEffect(() => {
     const moveElements = (e) => {
@@ -61,7 +141,15 @@ const Home = () => {
       <div className="relative h-full w-full flex flex-col items-center justify-center ">
         <div ref={h1Ref} className="relative w-fit h-fit">
           <h1 className="text-[14vw] leading-[13vw] uppercase text-[#9D2117] font-[Minecraft] tracking-[1.5vw]">
-            Cyphers
+           {text.split("").map((letter, index) => (
+            <span
+              key={index}
+              ref={(el) => (lettersRef.current[index] = el)}
+              className="inline-block "
+            >
+              {letter}
+            </span>
+          ))}
           </h1>
           <motion.img
             src="./imgs/home/star.png"

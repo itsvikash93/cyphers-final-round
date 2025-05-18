@@ -6,6 +6,12 @@ const RightNav = () => {
   const barsRef = useRef([]);
   const audioRef = useRef(null);
 
+   const playSound = () => {
+    const audio = new Audio("imgs/page3/hover-effect-dich.mp3");
+    audio.play();
+    audio.volume = 1;
+  };
+
   useEffect(() => {
     barsRef.current.forEach((bar, index) => {
       if (isMusicActive) {
@@ -63,9 +69,17 @@ const RightNav = () => {
       </button>
       
       <div
-        onClick={toggleAudio}
-        className="flex items-center h-10  px-2 scale-[130%] cursor-pointer rounded-md gap-1 text-[#9D2117] hover:opacity-80 transition-opacity"
+        onClick={() => {
+      
+            playSound();
+         
+    
+          toggleAudio()
+        }
+        }
+        className="flex items-center h-10   px-2 scale-[130%] font-[Minecraft] cursor-pointer rounded-md gap-1 text-[#9D2117] hover:opacity-80 transition-opacity"
       >
+        { isMusicActive ? <h1 className="text-xs  w-6 mr-1">OFF</h1> : <h1 className="text-xs  w-6 mr-1">ON</h1> }
         {Array.from({ length: 8 }).map((_, i) => (
           <div
             key={i}

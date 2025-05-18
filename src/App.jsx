@@ -6,7 +6,7 @@ import RightProgress from "./components/home/RightProgress";
 import Page4 from "./components/Page4";
 import Page2 from "./components/Page2";
 import Page3 from "./components/Page3";
-import Page5 from "./components/Page5";
+
 import Footer from "./components/Footer";
 import ClickCursor from "./components/ClickCursor";
 
@@ -23,7 +23,7 @@ const App = () => {
       <Page2 />
       <Page3 />
       <Page4 />
-      <Page5 />
+
       <Footer />
     </div>
   );
