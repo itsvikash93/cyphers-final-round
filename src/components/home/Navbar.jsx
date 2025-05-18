@@ -32,6 +32,10 @@ const Navbar = () => {
         )}
       </div>
 
+      <div className="absolute w-full h-[40%] top-15  left-0 flex items-center justify-center">
+        <img className="w-[4%]" src="/imgs/home/Group 40.svg" alt="" />
+      </div>
+
       <AnimatePresence>
         {isOpen && (
           <motion.div

@@ -20,25 +20,26 @@ const Page4 = () => {
       sno: "01",
       name: "REBELLION",
       text: "I'm a UI/UX designer and full-stack developer passionate about blending creativity with technology. I design intuitive interfaces and build robust web applications that prioritize user experience.",
-      img: "/imgs/page3/316d18edcf090bdfca9a06af4971a6429b971198.png",
+     
+      vid: "/imgs/page3/Rebellion01.mp4",
     },
     {
       sno: "02",
       name: "CREEEDS",
       text: "I'm a UI/UX designer and full-stack developer passionate about blending creativity with technology. I design intuitive interfaces and build robust web applications that prioritize user experience.",
-      img: "/imgs/page3/58b5735796904018aba50123e79e5878.jpg",
+          vid: "/imgs/page3/miranda.mp4"
     },
     {
       sno: "03",
       name: "MARSHALL",
       text: "I'm a UI/UX designer and full-stack developer passionate about blending creativity with technology. I design intuitive interfaces and build robust web applications that prioritize user experience.",
-      img: "/imgs/page3/5f0f1c9ba9e92f3c3041fdd080c9bb82.jpg",
+vid: "/imgs/page3/modern muses.mp4"
     },
     {
       sno: "04",
       name: "ISRO 07",
       text: "I'm a UI/UX designer and full-stack developer passionate about blending creativity with technology. I design intuitive interfaces and build robust web applications that prioritize user experience.",
-      img: "/imgs/page3/ea930f46121dc0377cfd790fe9ce611c.jpg",
+      vid: "/imgs/page3/Work03.mp4"
     },
   ];
 
@@ -102,12 +103,10 @@ const Page4 = () => {
             <div className="w-full lg:w-[40%] py-2 pb-5 lg:p-5 text-sm lg:text-lg text-[#9D2117]">
               {work.text}
             </div>
-            <div className="w-full lg:w-[30%] py-0 lg:py-2 lg:p-0 bg-zinc-300 h-40 sm:h-[40vh] lg:h-auto">
-              <img
-                className="w-full h-full object-cover"
-                src={work.img}
-                alt={work.name}
-              />
+            <div className="w-full lg:w-[30%] py-0 lg:py-2 lg:p-0 h-40 sm:h-[40vh] lg:h-auto">
+             <video className="h-full w-full object-cover" autoPlay loop muted playsInline>
+                <source src={work.vid} type="video/mp4" />
+              </video>
             </div>
           </div>
         ))}
