@@ -6,6 +6,7 @@ import TopProgress from "./components/home/TopProgress";
 import Page4 from "./components/Page4";
 import Page2 from "./components/Page2";
 import Page3 from "./components/Page3";
+import Loader from "./components/Loader";
 
 import Footer from "./components/Footer";
 import ClickCursor from "./components/ClickCursor";
@@ -13,6 +14,7 @@ import ClickCursor from "./components/ClickCursor";
 const App = () => {
   return (
     <div className="w-full bg-[#111010] text-white select-none">
+      <Loader />
       <Navbar />
       <TopProgress />
       <RightNav />
