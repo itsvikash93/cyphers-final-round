@@ -16,7 +16,7 @@ const Model = ({ activeMenu }) => {
 
   // Get dimensions from first texture or defaults
   const { width, height } = textures[0]?.image || { width: 1, height: 1 };
-  const scale = useAspect(width *1.1, height * 0.8, 0.165);
+  const scale = useAspect(width *1.1, height * 0.7, 0.165);
 
   // Initialize uniforms
   const uniforms = useRef({

@@ -45,7 +45,7 @@ const Home = () => {
       },
       {
         y: 0,
-        delay: 5,
+        delay: 5.4,
         stagger: {
           each: 0.05,
           ease: "linear",
@@ -226,7 +226,7 @@ const Home = () => {
         </h1>
       </div>
 
-      <div className="absolute right-0 top-0 p-6">
+      <div className="absolute right-1/2 translate-x-1/2 lg:-translate-x-0 top-[27%] sm:top-[31%] lg:right-0 lg:top-0 p-6">
         <button className="relative px-8 py-3 border-none text-[#9D2117] font-[Minecraft] uppercase cursor-pointer [clip-path:polygon(0%_0%,95%_0%,100%_20%,100%_100%,5%_100%,0%_80%)] text-base group overflow-hidden">
           <span className="relative z-10 transition-colors duration-300 group-hover:text-white">
             Explore
@@ -258,7 +258,7 @@ const Home = () => {
               stroke="#9D2117"
               strokeWidth="2"
               vectorEffect="non-scaling-stroke"
-              className="transition-colors duration-300 group-hover:stroke-white"
+              className="transition-colors duration-300 group-hover:stroke-[#8b5f5f]"
             />
           </svg>
 

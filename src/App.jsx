@@ -18,13 +18,15 @@ const App = () => {
   return (
     <ReactLenis root>
       <div className="w-full bg-[#111010] text-white select-none">
-        <Loader/>
+        <Loader />
         <Navbar />
         <TopProgress />
         <RightNav />
 
         {/* Center Elems */}
-        <ClickCursor />
+        <div className="hidden xl:block">
+          <ClickCursor />
+        </div>
         <Home />
         <Page2 />
         <Page3 />

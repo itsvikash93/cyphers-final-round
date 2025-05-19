@@ -3,7 +3,7 @@ import { gsap } from "gsap";
 
 const Page3 = () => {
   const data = [
-    { title: "app web dev" },
+    { title: "app web dev", img: "./imgs/page3/" },
     { title: "creative web dev" },
     { title: "augmented reality" },
   ];
@@ -104,7 +104,7 @@ const Page3 = () => {
       </h1>
 
       {/* Slider container */}
-      <div className="relative w-full mt-10 md:mt-28 h-[50vh] md:h-[60vh]">
+      <div className="relative w-full mt-5 md:mt-28 h-[50vh] md:h-[60vh]">
         {/* Navigation buttons */}
         <button
           onClick={() => {

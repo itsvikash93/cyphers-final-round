@@ -15,32 +15,32 @@ const Page4 = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-const works = [
-  {
-    sno: "01",
-    name: "REBELLION",
-    text: "A Next.js automotive configurator with 3D model rendering using React Three Fiber. Features real-time customization, AR previews, and GSAP animations for immersive UX.",
-    vid: "/imgs/page3/Rebellion01.mp4"
-  },
-  {
-    sno: "02",
-    name: "CREEEDS",
-    text: "Interactive design system built with React 18, Storybook and Framer Motion. Micro-interactions powered by CSS Houdini and WebGL shaders for next-gen UI experiences.",
-    vid: "/imgs/page3/miranda.mp4"
-  },
-  {
-    sno: "03",
-    name: "MARSHALL",
-    text: "React-based audio dashboard using Web Audio API and D3.js. Implements real-time waveform visualization with custom React hooks for performance optimization.",
-    vid: "/imgs/page3/modern muses.mp4"
-  },
-  {
-    sno: "04",
-    name: "ISRO 07",
-    text: "Space data portal with React Suspense and Server Components. Features ISRO API integration, WebGL star maps, and GSAP-powered scroll animations.",
-    vid: "/imgs/page3/Work03.mp4"
-  }
-]
+  const works = [
+    {
+      sno: "01",
+      name: "REBELLION",
+      text: "A Next.js automotive configurator with 3D model rendering using React Three Fiber. Features real-time customization, AR previews, and GSAP animations for immersive UX.",
+      vid: "/imgs/page3/Rebellion01.mp4",
+    },
+    {
+      sno: "02",
+      name: "CREEEDS",
+      text: "Interactive design system built with React 18, Storybook and Framer Motion. Micro-interactions powered by CSS Houdini and WebGL shaders for next-gen UI experiences.",
+      vid: "/imgs/page3/miranda.mp4",
+    },
+    {
+      sno: "03",
+      name: "MARSHALL",
+      text: "React-based audio dashboard using Web Audio API and D3.js. Implements real-time waveform visualization with custom React hooks for performance optimization.",
+      vid: "/imgs/page3/modern muses.mp4",
+    },
+    {
+      sno: "04",
+      name: "ISRO 07",
+      text: "Space data portal with React Suspense and Server Components. Features ISRO API integration, WebGL star maps, and GSAP-powered scroll animations.",
+      vid: "/imgs/page3/Work03.mp4",
+    },
+  ];
 
   useEffect(() => {
     // Only apply animations on desktop
@@ -76,7 +76,7 @@ const works = [
   }, [windowWidth]);
 
   return (
-    <div className="w-full lg:h-[200vh] xl:h-[250vh] relative font-[Aux-mono] min-h-screen text-white pb-10 lg:pb-10  lg:p-10 overflow-hidden">
+    <div className="w-full lg:h-[200vh] xl:h-[250vh] relative font-[Aux-mono] min-h-screen text-white pb-2  lg:p-10 overflow-hidden">
       <h1 className="lg:text-center px-4 uppercase text-[#9D2117] text-3xl lg:text-5xl font-[Minecraft] tracking-wider">
         our <span className="text-white">unparalleled</span> legacy
       </h1>
@@ -103,7 +103,13 @@ const works = [
               {work.text}
             </div>
             <div className="w-full lg:w-[30%] py-0 lg:py-2 lg:p-0 h-40 sm:h-[40vh] lg:h-auto">
-             <video className="h-full w-full object-cover" autoPlay loop muted playsInline>
+              <video
+                className="h-full w-full object-cover"
+                autoPlay
+                loop
+                muted
+                playsInline
+              >
                 <source src={work.vid} type="video/mp4" />
               </video>
             </div>

@@ -17,7 +17,7 @@ const Navbar = () => {
       <div
         ref={logoRef}
         onClick={handleMenuClick}
-        className="absolute top-5 left-5 z-[992]"
+        className="absolute top-5 left-4 z-[992]"
       >
         {isOpen ? (
           <i
@@ -32,8 +32,14 @@ const Navbar = () => {
         )}
       </div>
 
-      <div className="absolute w-full h-[40%] top-15  left-0 flex items-center justify-center">
-        <img className="w-[4%]" src="/imgs/home/Group 40.svg" alt="" />
+      {/* Logo */}
+
+      <div className="absolute md:left-1/2 md:-translate-x-1/2 w-fit top-6 right-4 ">
+        <img
+          className="w-[10vw] md:w-[3vw]"
+          src="/imgs/home/Group 40.svg"
+          alt=""
+        />
       </div>
 
       <AnimatePresence>
@@ -45,9 +51,11 @@ const Navbar = () => {
             transition={{ duration: 1, ease: "easeInOut" }}
             className="nav-details absolute z-[99] w-full h-screen top-0 backdrop-blur-lg bg-black/10 flex overflow-hidden"
           >
-            <Scene activeMenu={activeMenu} />
+            <div className="hidden xl:block">
+              <Scene activeMenu={activeMenu} />
+            </div>
 
-            <div className="left relative h-full w-full text-2xl lg:text-7xl font-bold uppercase flex flex-col gap-2 items-center justify-center text-white font-[Minecraft] tracking-wider pointer-events-auto">
+            <div className="left relative h-full w-full text-2xl lg:text-4xl xl:text-7xl font-bold uppercase flex flex-col gap-2 items-center justify-center text-white font-[Minecraft] tracking-wider pointer-events-auto">
               <div
                 onMouseLeave={() => setActiveMenu(null)}
                 className="w-[80%] relative"

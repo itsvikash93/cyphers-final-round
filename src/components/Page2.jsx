@@ -170,7 +170,7 @@ const Page2 = () => {
                 <div className="w-full h-full rounded-l-lg group-hover:translate-x-4 group-hover:-translate-y-4 transition-all duration-400 shadow-2xl overflow-hidden">
                   <DistortionImageEffect
                     img1="./imgs/page2/img11.png"
-                    img2="./imgs/page2/img12.png"
+                    img2="./imgs/page2/img12.jpg"
                     disp="/imgs/displacement/image.png"
                   />
                 </div>

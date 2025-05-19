@@ -2,7 +2,6 @@ import React, { useEffect, useState, useRef } from "react";
 import { gsap } from "gsap"; // Import GSAP
 import "./Loader.css"; // Import the CSS file for styling
 
-
 const Loader = () => {
   const [progress, setProgress] = useState(0);
   const loaderRef = useRef(null); // Reference to the loader container
@@ -36,15 +35,6 @@ const Loader = () => {
           // Hide the loader after fade-out
           loaderRef.current.style.display = "none";
         },
-        // onComplete: () => {
-        //     // Add additional fade-out animation
-        //     gsap.to(loaderRef.current, {
-        //         scale: 0.5, // Shrink the loader slightly
-        //         duration: 1, // Duration of the additional animation
-        //         ease: "power2.inOut",
-
-        //     });
-        // },
       });
     }
   }, [progress]);
@@ -56,9 +46,13 @@ const Loader = () => {
     >
       <div className="h-[20vw] w-[60vw] flex justify-center items-center">
         {/* loga Overlay */}
-        <div className="logo-overlay ">
+        <img
+          src="./imgs/home/shadow.png"
+          alt=""
+          className="absolute z-9 opacity-50"
+        />
+        <div className="logo-overlay z-[10]">
           <div className="h-[15vh] w-[20vw] flex items-center justify-center">
-            
             <img className="h-[15vh]" src="./imgs/Loader/Group 40.svg" alt="" />
           </div>
 
