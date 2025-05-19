@@ -4,12 +4,12 @@
 
 @font-face {
   font-family: "Minecraft";
-  src: url("./fonts/Minecraft.ttf");
+  src: url("/fonts/Minecraft.ttf");
 }
 
 @font-face {
   font-family: "Aux-mono";
-  src: url("./fonts/aux-mono.ttf");
+  src: url("/fonts/aux-mono.ttf");
 }
 
 ::-webkit-scrollbar {
