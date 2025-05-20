@@ -51,7 +51,7 @@ const Page4 = () => {
       } else if (windowWidth > 1305) {
         yValue = 270; // 15-inch laptop
       } else {
-        yValue = 220; // Smaller laptops
+        yValue = 240; // Smaller laptops
       }
 
       gsap.utils.toArray(".work-item").forEach((item, i) => {
@@ -76,7 +76,7 @@ const Page4 = () => {
   }, [windowWidth]);
 
   return (
-    <div className="w-full lg:h-[200vh] xl:h-[250vh] relative font-[Aux-mono] min-h-screen text-white pb-2  lg:p-10 overflow-hidden">
+    <div className="w-full lg:h-[200vh] 2xl:h-[250vh] relative font-[Aux-mono] min-h-screen text-white pb-2  lg:p-10 overflow-hidden">
       <h1 className="lg:text-center px-4 uppercase text-[#9D2117] text-3xl lg:text-5xl font-[Minecraft] tracking-wider">
         our <span className="text-white">unparalleled</span> legacy
       </h1>
@@ -87,7 +87,7 @@ const Page4 = () => {
             key={idx}
             className={`work-item w-full ${
               windowWidth > 768 ? "rotate-[-5deg] absolute" : "static"
-            } border-b-[1.5px] lg:mt-5 px-4 lg:px-5 pb-4 border-[#9D2117] rounded-xl h-auto lg:h-[20%] flex flex-col lg:flex-row bg-[#111010] left-0`}
+            } border-b-[1.5px] lg:mt-5 px-4 lg:px-5 pb-4 border-[#9D2117] rounded-xl h-auto lg:h-[35vh] 2xl:h-[20%] flex flex-col lg:flex-row bg-[#111010] left-0`}
             style={{
               transformOrigin: "center",
               marginBottom: windowWidth <= 768 ? "1.5rem" : "0",
@@ -102,7 +102,7 @@ const Page4 = () => {
             <div className="w-full lg:w-[40%] py-2 pb-5 lg:p-5 text-sm lg:text-lg text-[#9D2117]">
               {work.text}
             </div>
-            <div className="w-full lg:w-[30%] py-0 lg:py-2 lg:p-0 h-40 sm:h-[40vh] lg:h-auto">
+            <div className="w-full lg:w-[30%] py-0 lg:py-2 lg:p-0 h-40 sm:h-[40vh] lg:h-full 2xl:h-auto">
               <video
                 className="h-full w-full object-cover"
                 autoPlay

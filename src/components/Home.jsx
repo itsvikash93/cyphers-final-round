@@ -45,7 +45,7 @@ const Home = () => {
       },
       {
         y: 0,
-        delay: 5.4,
+        delay: 6,
         stagger: {
           each: 0.05,
           ease: "linear",
@@ -133,7 +133,7 @@ const Home = () => {
   }, []);
   return (
     <div ref={parent} className="h-screen w-full">
-      {/* Center Elems */}
+
       <div className="relative h-full w-full flex flex-col items-center lg:justify-center ">
         <div ref={h1Ref} className="mt-[20vh] lg:mt-0 relative w-fit h-fit">
           <h1 className="text-[14vw] leading-[13vw] uppercase text-[#9D2117] font-[Minecraft] tracking-[1.5vw]">
